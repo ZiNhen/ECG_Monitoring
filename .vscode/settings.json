@@ -1,0 +1,33 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.espIdfPathWin": "C:\\Users\\AD\\esp\\v5.5.1\\esp-idf",
+  "idf.pythonInstallPath": "C:\\Users\\AD\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32.cfg"
+  ],
+  "idf.toolsPathWin": "C:\\Users\\AD\\Espressif",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32"
+  },
+  "clangd.path": "C:\\Users\\AD\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=C:\\Users\\AD\\Espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32-elf-gcc.exe",
+    "--compile-commands-dir=${workspaceFolder}\\build"
+  ],
+  "files.associations": {
+    "gpio_types.h": "c",
+    "adc_types.h": "c",
+    "cstdint": "c",
+    "mqtt.h": "c",
+    "esp_event.h": "c",
+    "esp_crt_bundle.h": "c",
+    "mqtt_client.h": "c",
+    "stdbool.h": "c",
+    "main.h": "c"
+  },
+  "idf.portWin": "COM7",
+  "idf.flashType": "UART",
+  "C_Cpp.errorSquiggles": "disabled"
+}
