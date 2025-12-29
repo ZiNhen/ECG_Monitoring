@@ -1,17 +1,10 @@
 #include "tb_http.h"
 
-
 #define TAG "TB_HTTP"
-
-/* ================== CẤU HÌNH ================== */
-/* URL ThingsBoard qua Cloudflare Tunnel */
 #define TB_TELEMETRY_URL "https://thingsboard.ecgproject.site/api/v1/pwnvut1d1q3z1q0w6ciw/telemetry"
-
-/* Timeout HTTP (ms) - Tăng lên 10s cho an toàn */
 #define TB_HTTP_TIMEOUT_MS 20000 
 /* ============================================== */
 
-// Biến tĩnh giữ kết nối
 static esp_http_client_handle_t client = NULL;
 
 esp_err_t http_event_handler(esp_http_client_event_t *evt)
@@ -108,7 +101,6 @@ esp_err_t http_event_handler(esp_http_client_event_t *evt)
     return ESP_OK;
 }
 
-// Hàm khởi tạo - CHỈ GỌI 1 LẦN
 void tb_http_init(void)
 {
     if (client != NULL) {
@@ -140,7 +132,6 @@ esp_err_t tb_http_send_json(const char *json_payload)
 {
     if (json_payload == NULL) return ESP_ERR_INVALID_ARG;
     
-    // Nếu chưa init thì tự init
     if (client == NULL) {
         tb_http_init();
         if (client == NULL) return ESP_FAIL;
@@ -158,21 +149,13 @@ esp_err_t tb_http_send_json(const char *json_payload)
     if (err == ESP_OK) {
         int status = esp_http_client_get_status_code(client);
         if (status >= 200 && status < 300) {
-            // Thành công
-            //ESP_LOGI(TAG, "Status: %d, Sent OK", status);
+            ESP_LOGI(TAG, "Status: %d, Sent OK", status);
         } else {
             ESP_LOGW(TAG, "Status: %d (Logic Error)", status);
-            // Nếu server trả về lỗi 5xx hoặc 4xx, có thể không cần đóng kết nối, 
-            // nhưng an toàn nhất là đóng để reset trạng thái.
         }
     } else {
         ESP_LOGE(TAG, "Send Failed: %s", esp_err_to_name(err));
-        
-        // --- ĐOẠN SỬA ĐỔI QUAN TRỌNG ---
-        // Nếu lỗi mạng (Timeout, DNS, v.v.), hãy đóng kết nối để lần sau bắt tay lại từ đầu
-        // esp_http_client_close chỉ đóng socket, không free memory của client handle
         esp_http_client_close(client); 
-        // -------------------------------
     }
 
     return err;

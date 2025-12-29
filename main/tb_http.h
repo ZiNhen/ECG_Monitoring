@@ -27,17 +27,7 @@
 extern "C" {
 #endif
 
-/**
- * @brief Khởi tạo kết nối HTTP Client (Gọi 1 lần duy nhất)
- */
 void tb_http_init(void);
-
-/**
- * @brief Gửi JSON telemetry lên ThingsBoard (Tái sử dụng kết nối)
- *
- * @param json_payload  Chuỗi JSON hoàn chỉnh
- * @return esp_err_t    ESP_OKS nếu gửi thành công
- */
 esp_err_t tb_http_send_json(const char *json_payload);
 
 #ifdef __cplusplus

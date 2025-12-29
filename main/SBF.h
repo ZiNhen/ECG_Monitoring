@@ -20,8 +20,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 /*
 Generated code is based on the following filter design:
-<micro.DSP.FilterDocument sampleFrequency="#500" arithmetic="float" biquads="Direct1" classname="SBF" inputMax="#1" inputShift="#15" >
-  <micro.DSP.IirButterworthFilter N="#4" bandType="s" w1="#0.08" w2="#0.102" stopbandRipple="#undefined" passbandRipple="#undefined" transitionRatio="#undefined" >
+<micro.DSP.FilterDocument sampleFrequency="#500" arithmetic="float" biquads="Direct1" classname="SBF" inputMax="#1" inputShift="#-1" >
+  <micro.DSP.IirButterworthFilter N="#4" bandType="s" w1="#0.08" w2="#0.1" stopbandRipple="#undefined" passbandRipple="#undefined" transitionRatio="#undefined" >
     <micro.DSP.FilterStructure coefficientBits="#0" variableBits="#0" accumulatorBits="#0" biquads="Direct1" >
       <micro.DSP.FilterSection form="Direct1" historyType="Double" accumulatorBits="#0" variableBits="#0" coefficientBits="#0" />
       <micro.DSP.FilterSection form="Direct1" historyType="Double" accumulatorBits="#0" variableBits="#0" coefficientBits="#0" />
@@ -29,17 +29,17 @@ Generated code is based on the following filter design:
       <micro.DSP.FilterSection form="Direct1" historyType="Double" accumulatorBits="#0" variableBits="#0" coefficientBits="#0" />
     </micro.DSP.FilterStructure>
     <micro.DSP.PoleOrZeroContainer >
-      <micro.DSP.PoleOrZero i="#0.47396941938115084" r="#0.8537833536326259" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#3" />
-      <micro.DSP.PoleOrZero i="#0.5759042087015978" r="#0.7822702841179988" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#2" />
-      <micro.DSP.PoleOrZero i="#0.4825816625429768" r="#0.8072790532236903" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#1" />
-      <micro.DSP.PoleOrZero i="#0.5220113772066901" r="#0.7763108533879954" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#0" />
-      <micro.DSP.PoleOrZero i="#0.5379807292188965" r="#0.842957137100757" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#3" />
-      <micro.DSP.PoleOrZero i="#0.5379807292188965" r="#0.842957137100757" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#1" />
-      <micro.DSP.PoleOrZero i="#0.5379807292188965" r="#0.842957137100757" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#0" />
-      <micro.DSP.PoleOrZero i="#0.5379807292188965" r="#0.842957137100757" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#2" />
+      <micro.DSP.PoleOrZero i="#0.47465172414628165" r="#0.8555988114670793" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#3" />
+      <micro.DSP.PoleOrZero i="#0.5681286974519106" r="#0.7913107471103241" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#2" />
+      <micro.DSP.PoleOrZero i="#0.48291838024546785" r="#0.8130055135746305" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#1" />
+      <micro.DSP.PoleOrZero i="#0.5192840280120979" r="#0.7852160061841602" isPoint="#true" isPole="#true" isZero="#false" symmetry="c" N="#1" cascade="#0" />
+      <micro.DSP.PoleOrZero i="#0.5331871669114575" r="#0.845997307939531" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#3" />
+      <micro.DSP.PoleOrZero i="#0.5331871669114575" r="#0.845997307939531" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#1" />
+      <micro.DSP.PoleOrZero i="#0.5331871669114575" r="#0.845997307939531" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#0" />
+      <micro.DSP.PoleOrZero i="#0.5331871669114575" r="#0.845997307939531" isPoint="#true" isPole="#false" isZero="#true" symmetry="c" N="#1" cascade="#2" />
     </micro.DSP.PoleOrZeroContainer>
     <micro.DSP.GenericC.CodeGenerator generateTestCases="#false" />
-    <micro.DSP.GainControl magnitude="#1" frequency="#0.4912109375" peak="#true" />
+    <micro.DSP.GainControl magnitude="#1" frequency="#0.45703125" peak="#true" />
   </micro.DSP.IirButterworthFilter>
 </micro.DSP.FilterDocument>
 
