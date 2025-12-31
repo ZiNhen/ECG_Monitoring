@@ -1,5 +1,5 @@
 #define ECG_Buffer_Size 500
-#define RR_Buffer_Size    60
+#define RR_Buffer_Size    100
 #define IGNORE           -10000 
 
 typedef struct {

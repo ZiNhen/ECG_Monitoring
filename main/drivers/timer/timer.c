@@ -1,5 +1,5 @@
 #include "timer.h"
-#include "semaphore.h"
+#include "os/semaphore.h"
 
 extern char *ECG_Sensor;
 extern SemaphoreHandle_t adc_timer_semaphore_handle;

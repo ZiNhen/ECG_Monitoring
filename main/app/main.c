@@ -2,7 +2,7 @@
 
 //Inlcude
 #include <stdio.h>
-#include "main.h"
+#include "app/main.h"
 
 #include "esp_log.h"
 #include "esp_timer.h"
@@ -10,21 +10,21 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#include "semaphore.h"
-#include "Queue.h"
+#include "os/semaphore.h"
+#include "os/Queue.h"
 
-#include "wifi_sta.h"
-#include "tb_http.h"
+#include "network/wifi/wifi_sta.h"
+#include "network/thingsboard/tb_http.h"
 
-#include "adc.h"
-#include "timer.h"
-#include "gpio.h"
+#include "drivers/adc/adc.h"
+#include "drivers/timer/timer.h"
+#include "drivers/gpio/gpio.h"
 
-#include "HPF.h"
-#include "LPF.h"
-#include "SBF.h"
+#include "ecg/filter/HPF.h"
+#include "ecg/filter/LPF.h"
+#include "ecg/filter/SBF.h"
 
-#include "PanTompkins.h"
+#include "ecg/detection/PanTompkins.h"
 #include <math.h>
 
 //Global variables
@@ -47,7 +47,7 @@ int16_t filtering(int data);
 void build_json_packet(char *buffer, size_t max_len, const ecg_msg_t *msg);
 int16_t downsampling(int16_t data);
 //Tasks
-void ECG_Reading_Task(void *pvParameters){
+void ECG_Processing_Task(void *pvParameters){
     static int raw = 0;
     static ecg_msg_t ecg_msg;
     static rr_buffer_t rr;
@@ -68,6 +68,7 @@ void ECG_Reading_Task(void *pvParameters){
             ecg_msg.ecg_buffer[ecg_index++] = filtered_data;
             L0_MINUS_COUNT += gpio_get_level(GPIO_L0_MINUS_PIN);
             L0_PLUS_COUNT += gpio_get_level(GPIO_L0_PLUS_PIN);
+            //printf("%d\n", filtered_data);
             //detect r peak and calculate heart rate
             int16_t downsampling_data = downsampling(filtered_data);
             if (downsampling_data != IGNORE){
@@ -147,8 +148,8 @@ void app_main(void)
     //Create Task
     //Core 1 Tasks
     xTaskCreatePinnedToCore(
-        ECG_Reading_Task,
-        "ECG_Reading_Task",
+        ECG_Processing_Task,
+        "ECG_Processing_Task",
         4096,    // stack size
         NULL,    // parameters
         2,       // priority

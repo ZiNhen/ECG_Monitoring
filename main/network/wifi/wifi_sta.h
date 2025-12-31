@@ -18,8 +18,8 @@
    If you'd rather not, just change the below entries to strings with
    the config you want - ie #define EXAMPLE_WIFI_SSID "mywifissid"
 */
-#define ESP_WIFI_SSID      "ZiNhen"
-#define ESP_WIFI_PASS      "16082005"
+#define ESP_WIFI_SSID      "quocthinh"
+#define ESP_WIFI_PASS      "23521513"
 #define ESP_MAXIMUM_RETRY  10
 
 #if CONFIG_ESP_STATION_EXAMPLE_WPA3_SAE_PWE_HUNT_AND_PECK

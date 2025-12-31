@@ -1,2 +1,2 @@
-idf_component_register(SRCS "gpio.c" "timer.c" "semaphore.c" "PanTompkins.c" "tb_http.c" "SBF.c" "LPF.c" "HPF.c" "Queue.c" "adc.c" "wifi_sta.c" "main.c"
+idf_component_register(SRCS "drivers/gpio/gpio.c" "drivers/timer/timer.c" "os/semaphore.c" "ecg/detection/PanTompkins.c" "network/thingsboard/tb_http.c" "ecg/filter/SBF.c" "ecg/filter/LPF.c" "ecg/filter/HPF.c" "os/Queue.c" "drivers/adc/adc.c" "network/wifi/wifi_sta.c" "app/main.c"
                     INCLUDE_DIRS ".")

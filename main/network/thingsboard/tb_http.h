@@ -34,4 +34,4 @@ esp_err_t tb_http_send_json(const char *json_payload);
 }
 #endif
 
-#endif /* TB_HTTPS_H */
+#endif

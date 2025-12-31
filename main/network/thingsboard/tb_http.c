@@ -115,9 +115,9 @@ void tb_http_init(void)
         .timeout_ms = TB_HTTP_TIMEOUT_MS,
         .transport_type = HTTP_TRANSPORT_OVER_SSL,
         .crt_bundle_attach = esp_crt_bundle_attach,
-        .keep_alive_enable = true,  // <--- QUAN TRỌNG: Giữ kết nối 
-        .buffer_size_tx = 4096,      // Tăng bộ đệm gửi lên 4KB
-        .user_agent = "ESP32-ECG",   // Định danh để tránh bị Cloudflare chặn
+        .keep_alive_enable = true, 
+        .buffer_size_tx = 4096,     
+        .user_agent = "ESP32-ECG",  
     };
 
     client = esp_http_client_init(&config);
@@ -137,13 +137,11 @@ esp_err_t tb_http_send_json(const char *json_payload)
         if (client == NULL) return ESP_FAIL;
     }
 
-    // Cấu hình lại Header và Payload
     esp_http_client_set_url(client, TB_TELEMETRY_URL);
     esp_http_client_set_method(client, HTTP_METHOD_POST);
     esp_http_client_set_header(client, "Content-Type", "application/json");
     esp_http_client_set_post_field(client, json_payload, strlen(json_payload));
 
-    // Thực hiện gửi
     esp_err_t err = esp_http_client_perform(client);
 
     if (err == ESP_OK) {
