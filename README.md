@@ -91,23 +91,14 @@ The raw signal from AD8232 is noisy. The ESP32 implements the following pipeline
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Hardware Wiring
+### 🚀 Hardware Wiring
 | AD8232 Pin | ESP32 Pin |
 | :--- | :--- |
 | **GND** | GND |
 | **3.3V** | 3.3V |
-| **OUTPUT** | GPIO 34 (Analog ADC) |
-| **LO+** | GPIO 35 (Input) |
-| **LO-** | GPIO 32 (Input) |
+| **OUTPUT** | GPIO 36 (ADC1_0) |
+| **LO+** | GPIO 34 (Input) |
+| **LO-** | GPIO 35 (Input) |
+<img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/82cd2563-0387-4f54-8301-7a48149bd30f" />
 
-### 2. Backend Setup (Docker)
-Ensure you have Docker and Docker Compose installed.
-```bash
-# Clone the repository
-git clone [https://github.com/ZiNhen/ECG_Monitoring.git](https://github.com/ZiNhen/ECG_Monitoring.git)
-cd ECG_Monitoring/backend
 
-# Start ThingsBoard
-docker-compose up -d
