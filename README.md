@@ -94,6 +94,7 @@ The raw signal from AD8232 is noisy. The ESP32 implements the following pipeline
 The R-Peak timestamps and ECG values then will be send to thingsboard server for further analysis and diagnosis.
 
 Below is the flowchart of firmware algorithm. The algorithm is divided into 2 phases and executed on 2 different core of a CPU to enhance the performance.
+
 <img width="530" height="931" alt="image" src="https://github.com/user-attachments/assets/427a78be-8d46-48e2-a59b-ef3290cb4a6f" />
 
 ---
@@ -107,6 +108,7 @@ Below is the flowchart of firmware algorithm. The algorithm is divided into 2 ph
 | **LO+** | GPIO 34 (Input) |
 | **LO-** | GPIO 35 (Input) |
 <img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/a9f44718-1738-4381-8b37-a200f7343fdc" />
+
 
 
 
