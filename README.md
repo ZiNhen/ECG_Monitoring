@@ -25,13 +25,14 @@
 This project aims to build a low-cost, portable, and reliable ECG monitoring system. It captures bio-signals using the **AD8232 sensor**, processes them directly on the **ESP32** using advanced digital filters and the **Pan-Tompkins algorithm**, and transmits health metrics to a self-hosted **ThingsBoard** server securely via **Cloudflare Tunnel**.
 
 The system provides real-time visualization of ECG waveforms and calculates critical HRV metrics (SDNN, RMSSD) for early health risk diagnosis.
+<img width="925" height="448" alt="image" src="https://github.com/user-attachments/assets/1c56474b-d560-419d-b62d-2283155e89e5" />
 
 ---
 
+## Firmware Architecture
+<img width="698" height="443" alt="image" src="https://github.com/user-attachments/assets/d34749f8-3d80-40cf-8c11-b7f7d826be42" />
+
 ## 🏗 System Architecture
-
-The data flow is designed for reliability and low latency:
-
 1.  **Sensing:** AD8232 captures analog heart signals.
 2.  **Edge Processing (ESP32):**
     * ADC Sampling.
@@ -89,6 +90,9 @@ The raw signal from AD8232 is noisy. The ESP32 implements the following pipeline
     * Differentiation $\rightarrow$ Squaring $\rightarrow$ Moving Window Integration $\rightarrow$ Adaptive Thresholding.
 4.  **Output:** Accurate R-Peak timestamps for Heart Rate (BPM) calculation.
 
+The R-Peak timestamps and ECG values then will be send to thingsboard server for further analysis and diagnosis.
+<img width="530" height="931" alt="image" src="https://github.com/user-attachments/assets/427a78be-8d46-48e2-a59b-ef3290cb4a6f" />
+
 ---
 
 ### 🚀 Hardware Wiring
@@ -99,6 +103,7 @@ The raw signal from AD8232 is noisy. The ESP32 implements the following pipeline
 | **OUTPUT** | GPIO 36 (ADC1_0) |
 | **LO+** | GPIO 34 (Input) |
 | **LO-** | GPIO 35 (Input) |
-<img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/82cd2563-0387-4f54-8301-7a48149bd30f" />
+<img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/a9f44718-1738-4381-8b37-a200f7343fdc" />
+
 
 
