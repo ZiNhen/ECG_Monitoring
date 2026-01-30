@@ -25,7 +25,7 @@
 This project aims to build a low-cost, portable, and reliable ECG monitoring system. It captures bio-signals using the **AD8232 sensor**, processes them directly on the **ESP32** using advanced digital filters and the **Pan-Tompkins algorithm**, and transmits health metrics to a self-hosted **ThingsBoard** server securely via **Cloudflare Tunnel**.
 
 The system provides real-time visualization of ECG waveforms and calculates critical HRV metrics (SDNN, RMSSD) for early health risk diagnosis.
-##User interface
+## User interface
 <img width="925" height="448" alt="image" src="https://github.com/user-attachments/assets/1c56474b-d560-419d-b62d-2283155e89e5" />
 
 ---
@@ -107,6 +107,7 @@ Below is the flowchart of firmware algorithm. The algorithm is divided into 2 ph
 | **LO+** | GPIO 34 (Input) |
 | **LO-** | GPIO 35 (Input) |
 <img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/a9f44718-1738-4381-8b37-a200f7343fdc" />
+
 
 
 
