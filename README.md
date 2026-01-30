@@ -46,6 +46,8 @@ The system provides real-time visualization of ECG waveforms and calculates crit
     * **Docker:** Containers for ThingsBoard Community Edition.
     * **ThingsBoard:** Dashboard visualization and HRV analytics.
 
+<img width="563" height="545" alt="image" src="https://github.com/user-attachments/assets/3c71043b-34cb-4a35-a075-ca397bee51eb" />
+
 ---
 
 ## ✨ Key Features
@@ -108,6 +110,7 @@ Below is the flowchart of firmware algorithm. The algorithm is divided into 2 ph
 | **LO+** | GPIO 34 (Input) |
 | **LO-** | GPIO 35 (Input) |
 <img width="1610" height="573" alt="image" src="https://github.com/user-attachments/assets/a9f44718-1738-4381-8b37-a200f7343fdc" />
+
 
 
 
